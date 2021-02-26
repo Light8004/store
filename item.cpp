@@ -1,36 +1,23 @@
 #include <iostream>
-#include <fstream> 
-
+#include <string>
 
 class item {
-protected: 
-std::string iName; 
-double iPrice; 
+public:
+    item(std::string name, double price) : iName(name), iPrice(price) {}
 
-public: 
+    std::string getName() {
+        return iName;
+    }
 
-item(std::string name, double price){
-    iName = name; 
-    iPrice= price; 
+    double getPrice() {
+        return iPrice;
+    }
+
+protected:
+    std::string iName;
+    double iPrice;
 };
 
-std::string getName(){
-
-return iName; 
-};
-
-double getPrice(){
-    return iPrice; 
-}
-
-
-
-};
-
-class fruit: public item{
-
-fruit(std::string name, double price){
-
-}
-
+class fruit : public item {
+    fruit(std::string name, double price) : item(name, price) {}
 };
